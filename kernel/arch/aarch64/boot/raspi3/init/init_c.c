@@ -19,13 +19,13 @@
 char boot_cpu_stack[PLAT_CPU_NUMBER][INIT_STACK_SIZE] ALIGN(16);
 
 /*
- * Initialize these variables in order to make them not in .bss section.
+ * Initialize these varibles in order to make them not in .bss section.
  * So, they will have concrete initial value even on real machine.
  *
  * Non-primary CPUs will spin until they see the secondary_boot_flag becomes
  * non-zero which is set in kernel (see enable_smp_cores).
  *
- * The secondary_boot_flag is initialized as {NOT_BSS, 0, 0, ...}.
+ * The secondary_boot_flag is initilized as {NOT_BSS, 0, 0, ...}.
  */
 #define NOT_BSS (0xBEEFUL)
 long secondary_boot_flag[PLAT_CPU_NUMBER] = {NOT_BSS};
@@ -43,6 +43,8 @@ static void wakeup_other_cores(void)
          * Set the entry address for non-primary cores.
          * 0xe0, 0xe8, 0xf0 are fixed in the firmware (armstub8.bin).
          */
+        // addr = (u64 *)0xd8;
+        // *addr = TEXT_OFFSET;
         addr = (u64 *)0xe0;
         *addr = TEXT_OFFSET;
         addr = (u64 *)0xe8;

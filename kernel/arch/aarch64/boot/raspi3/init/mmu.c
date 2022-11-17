@@ -88,9 +88,7 @@ void init_boot_pt(void)
         /* LAB 2 TODO 1 BEGIN */
         /* Step 1: set L0 and L1 page table entry */
 
-
         /* Step 2: map PHYSMEM_START ~ PERIPHERAL_BASE with 2MB granularity */
-
 
         /* Step 2: map PERIPHERAL_BASE ~ PHYSMEM_END with 2MB granularity */
 
