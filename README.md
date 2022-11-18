@@ -1,6 +1,6 @@
-# ChCore
+# ChCore Lab
 
-This is the repository of ChCore labs in SE315, 2022 Spring.
+This is the repository of ChCore Lab.
 
 ## Build
 
