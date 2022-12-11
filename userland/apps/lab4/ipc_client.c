@@ -70,7 +70,7 @@ void test_ipc_routine(int server_cap)
         ipc_destroy_msg(client_ipc_struct, ipc_msg);
         printf("Passed!\n");
 
-        /* IPC send data */
+        /* IPC send cap */
         printf("IPC transfer cap test .... ");
         shared_page_pmo_cap = __chcore_sys_create_pmo(0x1000, PMO_DATA);
         shared_msg = 0xbeefbeef;
